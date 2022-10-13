@@ -26,7 +26,7 @@
       "main",
       {
         "name": "release/*",
-        "prerelease": "true"
+        "prerelease": "beta"
       },
       {
         "name": "develop",
@@ -50,7 +50,10 @@
         "@saithodev/semantic-release-backmerge",
         {
           "branches": [
-            "develop"
+            {
+              "from": "release/*",
+              "to": "develop"
+            }
           ],
           "clearWorkspace": true,
           "backmergeStrategy": "merge",
