@@ -49,7 +49,11 @@
       [
         "@saithodev/semantic-release-backmerge",
         {
-          "clearWorkspace": true
+          "branches": [
+            "develop"
+          ],
+          "clearWorkspace": true,
+          "backmergeStrategy": "rebase"
         }
       ]
     ]
