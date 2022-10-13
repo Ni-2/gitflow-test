@@ -15,5 +15,32 @@
   "bugs": {
     "url": "https://github.com/Ni-2/gitflow-test/issues"
   },
-  "homepage": "https://github.com/Ni-2/gitflow-test#readme"
+  "homepage": "https://github.com/Ni-2/gitflow-test#readme",
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^19.0.5"
+  },
+  "release": {
+    "branches": [
+      "master",
+      {
+        "name": "develop",
+        "prerelease": "alpha"
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "package-lock.json"
+          ]
+        }
+      ]
+    ]
+  }
 }

@@ -1,0 +1,32 @@
+name: CD
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - master
+            - develop
+        paths-ignore:
+            - 'package.json'
+            - 'package-lock.json'
+            - 'CHANGELOG.md'
+jobs:
+    release:
+        name: Release
+        runs-on: ubuntu-18.04
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v1
+            - name: Reconfigure git to use HTTP authentication
+              run: >
+                  git config --global url."https://github.com/".insteadOf
+                  ssh://git@github.com/
+            - name: Setup Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 14
+            - name: Install Dependencies
+              run: npm ci
+            - name: Bump and Release Extension and JSLib to Github and NPM
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+              run: npx semantic-release
