@@ -1,6 +1,6 @@
 {
   "name": "gitflow-test",
-  "version": "1.13.0-alpha.2",
+  "version": "1.14.0-alpha.2",
   "description": "",
   "main": "index.js",
   "scripts": {
