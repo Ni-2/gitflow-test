@@ -49,9 +49,7 @@
       [
         "@saithodev/semantic-release-backmerge",
         {
-          "clearWorkspace": true,
-          "backmergeStrategy": "merge",
-          "mergeMode": "ours"
+          "clearWorkspace": true
         }
       ]
     ]
