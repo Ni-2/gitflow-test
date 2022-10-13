@@ -24,6 +24,10 @@
     "branches": [
       "main",
       {
+        "name": "release/*",
+        "prerelease": "beta"
+      },
+      {
         "name": "develop",
         "prerelease": "alpha"
       }
