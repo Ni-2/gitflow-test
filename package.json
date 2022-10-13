@@ -53,7 +53,8 @@
             "develop"
           ],
           "clearWorkspace": true,
-          "backmergeStrategy": "rebase"
+          "backmergeStrategy": "merge",
+          "mergeMode": "ours"
         }
       ]
     ]
