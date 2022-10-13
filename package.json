@@ -1,0 +1,19 @@
+{
+  "name": "gitflow-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ni-2/gitflow-test.git"
+  },
+  "author": "NT",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Ni-2/gitflow-test/issues"
+  },
+  "homepage": "https://github.com/Ni-2/gitflow-test#readme"
+}
