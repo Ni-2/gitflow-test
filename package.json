@@ -50,10 +50,7 @@
         "@saithodev/semantic-release-backmerge",
         {
           "branches": [
-            {
-              "from": "release/*",
-              "to": "develop"
-            }
+            "develop"
           ],
           "clearWorkspace": true,
           "backmergeStrategy": "merge",
