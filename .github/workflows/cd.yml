@@ -27,21 +27,22 @@ jobs:
             - name: Install Dependencies
               run: npm ci
             - name: Bump and Release Extension and JSLib to Github and NPM
-              uses: cycjimmy/semantic-release-action@v3
               with:
-                  semantic_version: 16
                   branches: |
                       [
                         'main',
                         {
                           name: '+([0-9])?(.{+([0-9]),x}).x',
-                          prerelease: 'beta'
+                          channel: 'beta',
+                          prerelease: true
                         },
                         {
                           name: 'develop',
-                          prerelease: 'alpha'
+                          channel: 'alpha',
+                          prerelease: true
                         }
                       ]
               env:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: npx semantic-release
