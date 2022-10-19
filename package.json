@@ -24,10 +24,6 @@
     "branches": [
       "main",
       {
-        "name": "+([0-9])?(.{+([0-9]),x}).x",
-        "prerelease": true
-      },
-      {
         "name": "develop",
         "prerelease": "alpha"
       }
