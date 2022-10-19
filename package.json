@@ -22,11 +22,16 @@
   },
   "release": {
     "branches": [
-      "+([0-9])?(.{+([0-9]),x}).x",
       "main",
       {
-        "name": "develop",
-        "prerelease": "alpha"
+        "name": "beta",
+        "channel": "+([0-9])?(.{+([0-9]),x}).x",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "channel": "develop",
+        "prerelease": true
       }
     ],
     "plugins": [
