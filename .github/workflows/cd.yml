@@ -5,7 +5,6 @@ on:
         branches:
             - main
             - develop
-            - '+([0-9])?(.{+([0-9]),x}).x'
         paths-ignore:
             - 'package.json'
             - 'package-lock.json'
@@ -16,7 +15,23 @@ jobs:
         runs-on: ubuntu-20.04
         steps:
             - name: Checkout
-              uses: actions/checkout@v1
+              uses: actions/checkout@v3
+            - name: Semantic Release
+              uses: cycjimmy/semantic-release-action@v3
+              with:
+                  semantic_version: 16
+                  branches: |
+                      [
+                        'main',
+                        {
+                          name: '+([0-9])?(.{+([0-9]),x}).x',
+                          prerelease: 'beta'
+                        },
+                        {
+                          name: 'develop',
+                          prerelease: 'alpha'
+                        }
+                      ]
             - name: Reconfigure git to use HTTP authentication
               run: >
                   git config --global url."https://github.com/".insteadOf
@@ -31,4 +46,3 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-              run: npx semantic-release
