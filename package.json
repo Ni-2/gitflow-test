@@ -24,14 +24,12 @@
     "branches": [
       "main",
       {
-        "name": "beta",
-        "channel": "+([0-9])?(.{+([0-9]),x}).x",
-        "prerelease": true
+        "name": "+([0-9])?(.{+([0-9]),x}).x",
+        "prerelease": "beta"
       },
       {
-        "name": "alpha",
-        "channel": "develop",
-        "prerelease": true
+        "name": "develop",
+        "prerelease": "alpha"
       }
     ],
     "plugins": [
