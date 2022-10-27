@@ -55,6 +55,10 @@
               "to": "testing"
             },
             {
+              "from": "main",
+              "to": "develop"
+            },
+            {
               "from": "testing",
               "to": "develop"
             }
