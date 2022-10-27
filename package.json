@@ -1,6 +1,6 @@
 {
   "name": "gitflow-test",
-  "version": "1.32.0",
+  "version": "1.33.0-alpha.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -50,10 +50,13 @@
         "@saithodev/semantic-release-backmerge",
         {
           "branches": [
-            "develop",
             {
               "from": "main",
               "to": "testing"
+            },
+            {
+              "from": "testing",
+              "to": "develop"
             }
           ],
           "plugins": []
