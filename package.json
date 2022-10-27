@@ -50,10 +50,13 @@
         "@saithodev/semantic-release-backmerge",
         {
           "branches": [
-            "develop",
             {
               "from": "main",
               "to": "testing"
+            },
+            {
+              "from": "testing",
+              "to": "develop"
             }
           ],
           "plugins": []
