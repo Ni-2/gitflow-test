@@ -1,1 +1,1 @@
-git checkout main && git pull && git checkout develop && git pull && git merge main && git push
+git checkout testing && git pull && git checkout develop && git pull
